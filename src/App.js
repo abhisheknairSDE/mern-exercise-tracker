@@ -1,26 +1,32 @@
-import React, { Fragment } from 'react';
-import { createBrowserRouter, RouterProvider} from 'react-router-dom';
+import React, { Fragment } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Navbar from './components/navbar/navbar';
-import Home from './components/homePage/home';
+import Navbar from "./components/navbar/navbar";
+import ExerciseList from "./components/exercise/exerciseList";
+import CreateExercise from "./components/exercise/createExercise";
+import EditExercise from "./components/exercise/editExercise";
+import CreateUser from "./components/users/addUsers";
 
 const router = createBrowserRouter([
-  {path: '/', element : <Home />},
-  {path: '/edit/:id', element: <Home />},
-  {path: '/create', element: <Home />}
+  {
+    path: "/",
+    element: <Navbar />,
+    children: [
+      { path: "/", element: <ExerciseList /> },
+      { path: "/edit/:id", element: <EditExercise /> },
+      { path: "/create", element: <CreateExercise /> },
+      { path: "/user", element: <CreateUser /> },
+    ],
+  }
 ]);
 
 function App() {
-
-  const ExerciseList = [];
-
   return (
     <Fragment>
-      <Navbar />
       <RouterProvider router={router} />
     </Fragment>
-  );  
+  );
 }
 
 export default App;
