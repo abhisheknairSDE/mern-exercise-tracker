@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -23,9 +23,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <Fragment>
+    <div className="container">
       <RouterProvider router={router} />
-    </Fragment>
+    </div>
   );
 }
 

@@ -1,5 +1,5 @@
-const editExercise = () => {
+const EditExercise = () => {
     return <p>EDIT EXERCISE FALL BACK.</p>
 };
 
-export default editExercise;
+export default EditExercise;
